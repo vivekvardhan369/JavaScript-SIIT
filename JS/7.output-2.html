@@ -1,0 +1,55 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function DeleteClick(){
+            confirm("Delete Record\nAre you sure?");
+            if(1){
+                document.write(`<h2><font color='red'>Record Deleted Successfully..</font></h2><a href='7.output-2.html'>Back</a>`)
+            }else{
+                document.write("You Cancled");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function DeleteClick(){
+            result=confirm("Delete Record\nAre you sure?");
+            if(result==1){
+                document.querySelector("p").innerText="Item Deleted Successfully";
+            }else{
+                document.write("You Cancled");
+            }
+        }
+    </script>
+        <style>
+        .msg{
+            position: absolute;
+            right:50px;
+            top:10px;
+            color: red;
+        }
+        </style>
+
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+    <div>
+        <p class="msg"></p>
+    </div>
+</body>
+</html>

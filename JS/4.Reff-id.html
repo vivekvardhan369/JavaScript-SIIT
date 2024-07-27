@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function bodyload(){
+            document.getElementById("poster").src="../Pictures/iphone.png";
+            document.getElementById("btnLogin").value="Login";
+            document.getElementById("btnRegister").value="Register";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div><img width="200" id="poster" height="200" border="1"></div>
+    <div>
+        <form>
+            <h2>User Login</h2>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text"></dd>
+                <dt>Password</dt>
+                <dd><input type="password"></dd>
+            </dl>
+            <input id="btnLogin" type="button">
+        </form>
+    </div>
+    <div>
+        <form>
+            <h2>Register User</h2>
+            <dl>
+                <dt>Email</dt>
+                <dd><input type="email"></dd>
+                <dt>Mobile</dt>
+                <dd><input type="text"></dd>
+            </dl>
+            <input id="btnRegister" type="button">
+        </form>
+    </div>
+</body>
+</html>
