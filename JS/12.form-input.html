@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <script>
+        function BookClick(){
+            document.getElementById("BtnContainer").style.display="none";
+            document.getElementById("SummaryContainer").style.display="block";
+
+
+            document.getElementById("lblMovie").innerHTML=document.getElementById("lstMovies").value;
+            document.getElementById("lblDate").innerHTML=document.getElementById("lstDate").value;
+            document.getElementById("lblCinema").innerHTML=document.getElementById("lstCinema").value;
+            document.getElementById("lblShowTime").innerHTML=document.getElementById("lstTime").value;
+
+            poster=document.getElementById("Poster");
+            result=document.getElementById("lstMovies").value;
+
+            if(result=="Inside Out"){
+                poster.src="../Pictures/inside out.jpg";
+            }else{
+                poster.src="../Pictures/ChanduChampion.jpg";
+            }
+
+
+
+        }
+        function ModifyBooking(){
+            document.getElementById("title").innerHTML="Modify Booking";
+            document.getElementById("btnBook").innerHTML="Update";
+            document.getElementById("btnBook").className="btn btn-secondary";
+        }
+
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="m-3" id="BtnContainer">
+        <button data-bs-toggle="modal" data-bs-target="#booking" class="btn btn-primary">Quick Booking</button>
+    </div>
+
+    <div id="SummaryContainer" class="w-50 ms-3" style="display:none" >
+        <div class="bg-dark text-white d-flex justify-content-between p-2">
+            <span>Booking Summary</span>
+            <span class="bi bi-ticket-fill"></span>
+        </div>
+            <div class="row my-3">
+                <div class="col-3 ">
+                    <img src="" height="200" width="100%" border="1" id="Poster">
+                </div>
+                <div class="col-9">
+                    <dl class="row">
+                        <dt class="col-3">Movie</dt>
+                        <dd class="col-9" id="lblMovie"></dd>
+                        <dt class="col-3">Date</dt>
+                        <dd class="col-9" id="lblDate"></dd>
+                        <dt class="col-3">Cinema</dt>
+                        <dd class="col-9" id="lblCinema"></dd>
+                        <dt class="col-3">Show Time</dt>
+                        <dd class="col-9" id="lblShowTime"></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="d-flex ">
+                <button onclick="ModifyBooking()" data-bs-target="#booking" data-bs-toggle="modal" class="bi bi-pen-fill btn btn-warning w-100">Modify Booking</button>
+                <a href="./p11.html" class="btn btn-danger w-100 ms-3">Cancle Booking</a>
+            </div>
+    </div>
+
+    <div class="modal fade" id=booking>
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="title" >Quick Booking</h2>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between text-white bg-dark p-3">
+                        <div>
+                            <select class="form-select" name="" id="lstMovies">
+                                <option>Select Movies</option>
+                                <option>Inside Out</option>
+                                <option>Chandu CHAMPION</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" name="" id="lstDate">
+                                <option>Select Date</option>
+                                <option>June 15</option>
+                                <option>July 20</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" name="" id="lstCinema">
+                                <option>Select Cinema</option>
+                                <option>HYD</option>
+                                <option>BANG</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" name="" id="lstTime">
+                                <option>Select Time</option>
+                                <option>12:00 am</option>
+                                <option>14:00</option>
+                            </select>
+                        </div>
+                        <button onclick="BookClick()" id="btnBook" class="btn btn-danger" data-bs-dismiss="modal">Book</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
