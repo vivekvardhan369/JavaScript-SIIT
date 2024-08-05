@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+      function BodyLoad(){
+         var a=Math.round(Math.random()*10);
+         var b=Math.round(Math.random()*10);
+         var c=Math.round(Math.random()*10);
+         var d=Math.round(Math.random()*10);
+         var e=Math.round(Math.random()*10);
+         var f=Math.round(Math.random()*10);
+         document.getElementById("lblverify").innerHTML=a + "&nbsp;"+b+"&nbsp;"+c+"&nbsp;"+d+"&nbsp;"+e+"&nbsp;"+f;
+      }
+   </script>
+ </head>
+ <body onload="BodyLoad()">
+   <dl>
+      <dt>UserName</dt>
+      <dd><input type="text" ></dd>
+      <dt>Password</dt>
+      <dd><input type="password"></dd>
+      <dt>Verify Code</dt>
+      <dd id="lblverify"></dd>
+   </dl>
+   <button>Sumbit</button>
+ </body>
+ </html>

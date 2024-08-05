@@ -1,0 +1,32 @@
+
+<!--script>
+document.write(`Min=${Number.MIN_SAFE_INTEGER}<br>MAX=${Number.MAX_SAFE_INTEGER}`);
+</script-->
+
+<!--script>
+    var price=854000.45;
+    document.write("Price="+price.toLocaleString("en-in",{style:"currency",currency:"INR"}));
+</script-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(){
+            var age=document.getElementById("txtage").value;
+            if(isNaN(age)){
+                alert("Enter a number");
+            }
+            else{
+                document.write("Your age is:" + age);
+            }
+        }
+    </script>
+</head>
+<body>
+    Your Age: <input id="txtage" type="text"> <button onclick="SubmitClick()">Submit</button>
+</body>
+</html>
