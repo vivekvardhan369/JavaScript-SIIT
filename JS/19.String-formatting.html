@@ -1,0 +1,57 @@
+<!--script>
+    var msg="Welcome to javaScript";
+    document.write(msg.bold().italics().fontcolor('green').toLocaleUpperCase());
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function ChangeCase(){
+        var username = document.getElementById("txtName").value;
+        document.getElementById("txtName").value=username.toUpperCase();
+    }
+</script>
+<body>
+    <fieldset>
+        <legend>Your Name</legend>
+        <input onkeyup="ChangeCase()" type="text
+        " name="" id="txtName" placeholder="Name in BlockLetters">
+    </fieldset>
+</body>
+</html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ApplyClick(){
+
+            var size=document.getElementById("fontChange").value;
+            var color=document.getElementById("colorChange").value;
+
+            document.getElementById("text").innerHTML="Vivek".fontsize(size).fontcolor(color);
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Format Text</legend>
+        <dl>
+            <dt>Font Size</dt>
+            <dd><input onchange="ApplyClick()" type="range" min="1" max="10" id="fontChange"></dd>
+            <dt>Font Color</dt>
+            <dd><input id="colorChange" type="color"></dd>
+        </dl>
+        <button onclick="ApplyClick()">Apply</button>
+        <p align="center" id="text"></p>
+    </fieldset>
+</body>
+</html>

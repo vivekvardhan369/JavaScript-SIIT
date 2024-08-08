@@ -1,0 +1,62 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function verifyCard(){
+            var num=document.getElementById("cardnum").value;
+             var display=document.getElementById("display");
+             if(num.startsWith("44")){
+                poster.src="../Pictures/iphone.png"
+             }
+             else{
+                poster.src="../Pictures/inside out.jpg"
+             }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="w-25 m-4">
+        <dl>
+            <dt>Card Numeber</dt>
+            <dd class="input-group">
+                <input onblur="verifyCard()" type="text" id="cardnum" maxlength="16" class="form-control"><img  name="poster" id="img" width="50" class="input-group-text">
+            </dd>
+            <dd id="display"></dd>
+        </dl>
+    
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function emailVerify(){
+            var email=document.getElementById("emailVerify").value;
+            var error=document.getElementById("emailError");
+            if(email.indexOf("@")<3){
+                error.innerHTML="Please Include @".fontcolor('red');
+            }else{
+                error.innerHTML="verified".fontcolor('green')
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Email</dt>
+        <dd><input onblur="emailVerify()" type="text" id="emailVerify"></dd>
+        <dd id="emailError"></dd>
+    </dl>
+</body>
+</html-->
+

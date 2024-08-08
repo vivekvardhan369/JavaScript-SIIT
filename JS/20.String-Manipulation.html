@@ -1,0 +1,86 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(){
+            var username=document.getElementById("UserName").value;
+            var usererror=document.getElementById("UserError");
+            if(username.length==0){
+                usererror.innerHTML="User Name Required".fontcolor('red');
+            }else if(username.length<4){
+                usererror.innerHTML="Name too short".fontcolor('goldenrod');
+            }
+            else{
+                document.write("Registered...")
+            }
+
+        }
+        function verifyText(){
+
+            var msg=document.getElementById("msgtxt").value;
+            var length=msg.length;
+            var maxlength=100;
+            document.getElementById("msgStatus").innerHTML=`${maxlength-length} Chars Left`
+        }
+
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>UserName</dt>
+        <dd><input id="UserName"  type="text"></dd>
+        <dd id="UserError"></dd>
+        <dt>Your Message</dt>
+        <dd>
+            <textarea onkeyup="verifyText()" name="" id="msgtxt" rows="4" maxlength="100" cols="40"></textarea>
+        </dd>
+        <dd id="msgStatus"></dd>
+    </dl>
+    <button onclick="SubmitClick()">Submit</button>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SubmitClick(){
+            var uname=document.getElementById("txt").value;
+            var error=document.getElementById("error");
+            if(uname.charAt(0)==5){
+                document.write("verified successfully");
+            }
+            else{
+                document.write("Invalid").fontcolor('red');
+            }
+        }
+        function verifyName(){
+            uname=document.getElementById("txtName").value;
+            if(uname.charCodeAt(0)>=65 && uname.charCodeAt(0)<=90){
+                document.getElementById("display").innerHTML="";
+            }else{
+                document.getElementById("display").innerHTML="Name must start with Capital letters only".fontcolor('red');
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>UserName</dt>
+        <dd><input onblur="verifyName()" type="text" id="txtName" placeholder="ONLY BLOCK"></dd>
+        <dd id="display"></dd>
+        <dt>OTP</dt>
+        <dd><input id="txt" type="text"></dd>
+        <dd id="error"></dd>
+    </dl>
+    <button onclick="SubmitClick()">Submit</button>
+</body>
+</html-->
+

@@ -1,0 +1,29 @@
+<!-- script>
+    var str="Welcome to JavaScript"
+    document.write(str.substring(7,0)+"<br>")
+</script >
+
+<script>
+    var email= prompt("Enter Email")
+    var num = email.indexOf('@');
+    var id= email.slice(0,email.indexOf('@'))
+    document.write(id+"<br>")
+    var domain= email.substr(email.indexOf('@')+1);
+    document.write(domain+"<br>")
+
+</script>
+
+<script>
+    var videoUrl="https://www.youtube.com?v=y125lop"
+    var videoCode= videoUrl.slice(videoUrl.indexOf('=')+1);
+    document.write(videoCode)
+</script-->
+
+<script>
+    var message=prompt("Enter your message")
+    var firstChar= message.charAt(0).toUpperCase()
+    var restChars=message.slice(1).toLowerCase()
+    var sentence= firstChar+restChars
+    document.write(sentence)
+</script>
+
