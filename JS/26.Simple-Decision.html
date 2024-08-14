@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function verifyCard(){
+        var card=document.getElementById("Card").value
+        if(card==="1111222233334567"){
+            document.getElementById("Cvv").disabled=false;
+            document.getElementById("cvvContainer").style.display="block"
+        }else{
+            document.getElementById("cvvContainer").style.display="none";
+        }
+    }
+    function verifyCvv(){
+        var Cvv=document.getElementById("Cvv").value;
+        if(Cvv==="123"){
+            document.getElementById("Expiry").disabled=false;
+            document.getElementById("expiryContainer").style.display="block"
+        }else{
+            document.getElementById("expiryContainer").style.display="none";
+
+        }
+
+
+    }
+    function verifyExpiry(){
+        var Expiry=document.getElementById("Expiry").value;
+        if(Expiry==="2025"){
+            document.getElementById("btnPay").disabled=false;
+            document.getElementById("btnPay").style.display="block"
+        }else{
+            document.getElementById("btnPay").style.display="none"
+
+        }
+    }
+</script>
+<body>
+    <fieldset>
+        <legend>Payment</legend>
+        <dl>
+            <dt>Card Number</dt>
+            <dd><input type="text" id="Card" maxlength="16" onblur="verifyCard()"></dd>
+            <div id="cvvContainer" style="display: none;">
+                <dt>CVV</dt>
+                <dd><input type="text" size="4" id="Cvv" disabled onblur="verifyCvv()"></dd>
+            </div>
+
+            <div id="expiryContainer" style="display: none;">
+                <dt>Expiry</dt>
+                <dd>
+                    <select id="Expiry" disabled onchange="verifyExpiry()">
+                        <option>Select Expiry</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                    </select>
+                </dd>
+    
+            </div>
+
+        </dl>
+        <button style="display: none;" id="btnPay" disabled>Pay</button>
+    </fieldset>
+</body>
+</html>

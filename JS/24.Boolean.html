@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function StockChange(){
+            optcheck=document.getElementById("optCheck");
+            lblcheck=document.getElementById(lblCheck);
+            if(optcheck){
+                lblCheck.innerHTML="Stock Available"
+            }else{
+                lblCheck.innerHTML="Not Available"
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Stock</dt>
+        <dd><input onchange="StockChange()" type="checkbox" id="optCheck"><label id="lblCheck">Out OF STOCK</label></dd>
+    </dl>
+</body>
+</html>
+
+<!--script>
+    var stock=prompt("Enter true for available and false for Out Of Stock")=="true"?true:false
+    if(stock==true){
+        document.write("You selected true")
+    }else{
+        document.write("You selected False")
+    }
+</script>
+
+ <script>
+        a="10"
+
+        document.write("10"===10)
+ </script-->

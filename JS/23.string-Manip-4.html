@@ -1,0 +1,80 @@
+ <!--script>
+    var otp=prompt("Enter OTp")
+    if(otp.trim()=="7895"){
+        document.write('Valid')
+    }else{
+        document.write('Invalid')
+    }
+ </script>
+
+ <script>
+    var CsvData="1-Sam-Sam@gamilcom,2-John-John@outlook.com,3-David-David@skype"
+    // var data=CsvData.split(',')
+    // document.write(data[0])
+    var [sam,john,David]=CsvData.split(',')
+    document.write(sam)
+ </scrip>
+
+ <script>
+    var msg="Welocome to DOM"
+    document.write(msg.replace("DOM","Document Object Model"))
+ </script>
+
+ <script>
+    var msg="Hello !"
+    document.write(msg.repeat(2));
+ </script-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyPassword(){
+            var password=document.getElementById("txtPassword").value
+            var error=document.getElementById("error")
+            var RegExp=/(?=.*[A-Z])\w{4,19}/
+            var progress=document.getElementById("progress");
+
+            if(password.match(RegExp)){
+                error.innerHTML="Strong Password".fontcolor('green')
+                progress.className="progress-bar  progress-bar-striped progress-bar-animated bg-success"
+                progress.style.width="100%"
+
+            }else if(password.length<4){
+                error.innerHTML="Poor Password min 4 required".fontcolor('red');
+                progress.className="progress progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                progress.style.width="20%"
+
+
+            }else{
+                error.innerHTML="weak Password atleast one uppercase required ".fontcolor('goldenrod');
+                progress.className="progress progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                progress.style.width="40%"
+
+            }
+        }
+
+    </script>
+ </head>
+ <body class="container-fluid">
+    <fieldset class="w-25">
+        <legend>Verify Password</legend>
+            <input class="form-control bg-dark text-white" onkeyup="VerifyPassword()" type="password" id="txtPassword">
+            <div class="progress w-100 mt-4">
+                <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated">
+
+                </div>
+            </div>
+
+            <div id="error"></div>
+
+
+
+    </fieldset>
+ </body>
+ </html>
+
