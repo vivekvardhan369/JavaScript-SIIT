@@ -1,0 +1,94 @@
+<!--script>
+    var n=parseInt(prompt("Enter num"))
+    switch(n){
+        case 1: 
+        document.write("one");
+        break;
+        case 2:
+        document.write("two");
+        break;
+        case 3: 
+        document.write("three");
+        break;
+        case 1: 
+        document.write("four");
+        break;
+        default:
+            document.write("Enter only1 to 4")
+            break;
+    }
+</script-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<script>
+    var flag="";
+
+    function ContinueClick(){
+        var UserId=document.getElementById("txtUserId").value;
+
+        function ToggleContainer(){
+            document.getElementById("Id_Container").style.display="none"
+
+            document.getElementById("Password_Container").style.display="block";
+
+        }
+
+        switch(UserId)
+        {
+            case "david123@gmail.com":
+            flag=`Your email verified successfully- Activation link sent to ${UserId}`;
+            ToggleContainer();
+            break;
+
+            case  "987456321":
+            flag=`Your mobile verified successfully- OTP sent to your ${UserId}`
+            ToggleContainer();
+            break;
+
+            default:
+            document.getElementById("UserId_Error").innerHTML=`${UserId} doesn't exist`
+            break;
+        }
+    }
+
+    function LoginClick(){
+        var Password=document.getElementById("txtPassword").value;
+        if(Password==="david123")
+        {
+            document.write(`<h2>${flag}</h2>`)
+        }
+        else{
+            document.getElementById("Password_Error").innerHTML="Invalid Password"
+        }
+    }
+</script>
+<body class="d-flex justify-content-center align-items-center" style="height:100vh">
+    <div>
+        <div><h2>Sign IN</h2>
+        </div>
+        <div id="Id_Container">
+            <label class="form-label fw-bold">Email or mobile phone number</label>
+            <div><input type="text" id="txtUserId" class="form-control"></div>
+            <div id="UserId_Error" class="text-danger"></div>
+            <div class="my-2">
+                <button onclick="ContinueClick()" class="btn btn-warning w-100">Continue</button>
+            </div>
+        </div>
+        <div id="Password_Container" style="display: none;">
+            <label class="form-label fw-bold">Password</label>
+            <div><input type="password" id="txtPassword" class="form-control"></div>
+            <div id="Password_Error" class="text-danger"></div>
+            <div class="my-2">
+                <button onclick="LoginClick()" class="btn btn-warning w-100">Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

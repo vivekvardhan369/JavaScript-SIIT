@@ -1,0 +1,126 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick(){
+            var UserId = document.getElementById("UserId").value;
+            var Password = document.getElementById("Password").value;
+            var p = document.querySelector("p");
+
+            if(UserId=="")
+            {
+                 p.innerHTML = "User Id Required".fontcolor('red');
+            }
+            else {
+                if(UserId==="john_nit")
+                {
+                    if(Password==="")
+                    {
+                        p.innerHTML = "Password Required".fontcolor('red');
+                    } else {
+                            if(Password==="john@123")
+                            {
+                                document.write("Login Success");
+                            }
+                            else
+                            {
+                                p.innerHTML = "Invalid Password".fontcolor('red');
+                            }
+                    }
+                }
+                else
+                {
+                    p.innerHTML = "Invalid UserId".fontcolor('red');
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Id</dt>
+        <dd><input type="text" id="UserId"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="Password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+    <p></p>
+</body>
+</html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function PayClick(){
+             var p = document.querySelector("p");
+             var Card = document.getElementById("Card").value;
+             var Cvv = document.getElementById("Cvv").value;
+             var Expiry = document.getElementById("Expiry").value;
+
+             if(Card==="")
+             {
+                 p.innerHTML = "Card Number Required".fontcolor('red');
+             } else {
+                 if(Card==="4444555566667890")
+                 {
+
+                     if(Cvv==="")
+                     {
+                        p.innerHTML ="CVV Required".fontcolor('red');
+                     } else {
+                        if(Cvv==="345")
+                        {
+
+                           if(Expiry=="-1"){
+                               p.innerHTML = "Please Select Expiry Year".fontcolor('red');
+                           } else {
+                              if(Expiry==="2025"){
+                                  document.write("<h2>Payment Success..</h2>");
+                              } else {
+                                  p.innerHTML = "Invalid Expiry".fontcolor('red');
+                              }
+                           }
+
+                        } else {
+                            p.innerHTML = "Invalid CVV".fontcolor('red');
+                        }
+                     }
+
+                 } else {
+                    p.innerHTML = "Invalid Card Number".fontcolor('red');
+                 }
+             }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Payment</legend>
+        <dl>
+            <dt>Card</dt>
+            <dd><input type="text" id="Card"></dd>
+            <dt>Cvv</dt>
+            <dd><input type="text" id="Cvv" size="4"></dd>
+            <dt>Expiry</dt>
+            <dd>
+                <select id="Expiry">
+                    <option value="-1">Select Expiry</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                </select>
+            </dd>
+        </dl>
+        <button onclick="PayClick()">Pay</button>
+        <p align="center"></p>
+    </fieldset>
+</body>
+</html>
